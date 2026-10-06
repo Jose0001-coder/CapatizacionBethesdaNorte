@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Imágenes con Excelencia — Centro Misionero Bethesda Norte</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap">
+<style>
+:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#fbf6ff;--card:#fff;--ink:#3d2c4d;--head:#5b2186;--acc:#8e3fb5;--soft:#f3e6fb;--gold:#d6336c;--line:#ead8f5;--ok:#3d9a62;--no:#c62f3b}
+html{scroll-behavior:smooth}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Nunito,"Segoe UI",Verdana,sans-serif}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--card);border-bottom:3px solid var(--gold);box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.bar{max-width:1050px;margin:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px;padding:8px 16px}
+.logo{font-weight:800;color:var(--head);text-decoration:none}
+.bar nav{display:flex;flex-wrap:wrap;gap:4px 6px}
+.bar nav a{color:var(--ink);text-decoration:none;font-weight:700;font-size:.9rem;padding:5px 12px;border-radius:18px}
+.bar nav a:hover{background:var(--soft)}.bar nav a.on{background:var(--acc);color:#fff}
+.hero{background:linear-gradient(135deg,#ead6ff,#f7c6dd,#ffd3d3,#dcc4f5);text-align:center;padding:60px 20px 50px}
+.hero small,.ph small{letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--acc)}
+.hero h1{font-size:2.4rem;color:var(--head);margin:.3em auto;max-width:720px;line-height:1.2}
+.hero p{max-width:620px;margin:.5em auto}
+.ph{background:var(--soft);padding:30px 20px;text-align:center;border-bottom:1px solid var(--line)}
+.ph h1{margin:.2em 0 0;color:var(--head);font-size:2rem}
+main{max-width:1050px;margin:auto;padding:10px 16px 50px}
+.page{display:none}.page.show{display:block}
+h2{color:var(--head);font-size:1.5rem;margin:2rem 0 .4rem;padding-left:12px;border-left:6px solid var(--gold)}
+h3{color:var(--acc);margin:1.2rem 0 .3rem;font-size:1.15rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 20px 18px;margin:1rem 0;box-shadow:0 2px 8px rgba(110,40,150,.06)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}.cols.top{align-items:start}.cols.three{grid-template-columns:repeat(3,1fr)}
+a.tile{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:12px;padding:16px 18px;transition:.2s}
+a.tile:hover{transform:translateY(-3px);box-shadow:0 6px 14px rgba(110,40,150,.15)}
+a.tile b{display:block;color:var(--head);font-size:1.1rem}a.tile span.i{font-size:1.8rem}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+figure{margin:10px 0;text-align:center}figcaption{font-size:.85rem;opacity:.85;margin-top:4px}
+svg{width:100%;height:auto;display:block;border-radius:8px;border:1px solid var(--line)}
+.tip,.how,.vid,.verse{border-radius:10px;padding:10px 16px;margin:12px 0}
+.tip{background:#fdeef5;border-left:5px solid var(--gold);color:#5a2140}
+.how{background:var(--soft);border-left:5px solid var(--acc)}
+.vid{background:var(--card);border:1px dashed var(--acc)}.vid a{color:var(--acc);font-weight:700}
+.verse{background:linear-gradient(90deg,var(--soft),var(--card));font-style:italic;text-align:center}.verse b{font-style:normal;color:var(--head)}
+.ok,.no{padding:10px 14px;border-radius:10px;background:var(--card);border:1px solid var(--line)}
+.ok{border-top:5px solid var(--ok)}.no{border-top:5px solid var(--no)}
+.wheel{width:170px;height:170px;border-radius:50%;margin:auto;background:conic-gradient(#e8736b,#f0a45a,#f2d45c,#8bc96a,#5bbfae,#5a9be0,#8b7fd6,#d27fbf,#e8736b);-webkit-mask:radial-gradient(circle,transparent 38%,#000 39%);mask:radial-gradient(circle,transparent 38%,#000 39%)}
+.sw{display:flex;gap:6px;margin:8px 0}.sw span{flex:1;height:44px;border-radius:8px;border:1px solid var(--line)}
+.poster{background:#fff;color:#223;border:1px solid var(--line);border-radius:8px;padding:18px;text-align:center}
+.poster .t{font-size:1.7rem;font-weight:800;color:#1f5a96;line-height:1.1}.poster .d{font-size:1.05rem;font-weight:700;margin:6px 0}.poster .s{font-size:.8rem}
+ul.check{list-style:none;padding:0}ul.check li::before{content:"✔ ";color:var(--ok)}
+dt{font-weight:800;color:var(--head);margin-top:.5em}dd{margin:0 0 0 1em}
+table{width:100%;border-collapse:collapse;min-width:420px}td,th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left}th{color:var(--head)}
+.pn{display:flex;justify-content:space-between;gap:10px;margin-top:30px}
+.pn a{background:var(--acc);color:#fff;text-decoration:none;font-weight:700;padding:9px 18px;border-radius:22px}
+button{font:inherit;font-weight:700;background:transparent;color:var(--ink);border:1px solid var(--line);padding:4px 12px;border-radius:18px;cursor:pointer}
+footer{background:var(--card);border-top:3px solid var(--gold);text-align:center;padding:24px 16px;font-size:.9rem}
+@media(max-width:700px){.cols,.cols.three{grid-template-columns:1fr}.hero h1{font-size:1.7rem}.cols.three.keep{grid-template-columns:repeat(3,1fr)}}
+
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(214,51,108,.9)}50%{box-shadow:0 0 0 9px rgba(214,51,108,0)}}
+@keyframes flash{0%{opacity:0}30%{opacity:.9}100%{opacity:0}}
+@keyframes focus{from{opacity:0;transform:translate(-50%,-50%) scale(1.8)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@keyframes grad{0%{background-position:0 50%}100%{background-position:100% 50%}}
+@keyframes bob{50%{transform:translateY(-7px)}}
+.hero{background-size:200% 200%;animation:grad 9s ease-in-out infinite alternate}
+.hero h1,.ph h1{animation:up .9s both}.hero p{animation:up 1.2s both}
+.page.show{animation:up .5s both}
+.tile span.i{display:inline-block;animation:bob 3s ease-in-out infinite}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+.pn a,.tile{transition:.2s}.pn a:hover{transform:translateX(3px);filter:brightness(1.08)}
+.pl{margin:12px 0}
+.mock{position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#e9eef5;height:330px;display:flex;flex-direction:column;box-shadow:0 4px 14px rgba(110,40,150,.12)}
+.mtop{height:40px;background:#fff;display:flex;align-items:center;gap:8px;padding:0 10px;border-bottom:1px solid var(--line);font-size:.78rem}
+.mlogo{font-weight:800;color:var(--head);margin-right:auto}
+.mbtn{padding:4px 10px;border-radius:6px;background:var(--soft);color:var(--head);font-weight:700}
+.mbody{flex:1;display:flex;min-height:0}
+.mside{width:78px;background:#fff;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px;padding:8px 6px;font-size:.72rem;font-weight:700}
+.mside span{padding:6px 4px;border-radius:6px;text-align:center}
+.mcan{flex:1;position:relative;display:flex;align-items:center;justify-content:center}
+.mposter{width:min(185px,72%);height:90%;background:#fff;border:1px dashed #aab;border-radius:4px;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:10px;text-align:center;color:#444;transition:.7s}
+.mposter>*{opacity:0;transition:.6s;position:relative}
+.pt{font-weight:800;font-size:1.15rem;line-height:1.1}.pd{font-weight:700;font-size:.8rem}.ps{font-size:.68rem}
+.bd{position:absolute;left:-12px;top:50%;margin-top:-10px;width:20px;height:20px;border-radius:50%;background:var(--gold);color:#fff;font:800 .75rem/20px Nunito,sans-serif;text-align:center;opacity:0;transition:.4s}
+.mpal{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);display:flex;gap:6px;opacity:0;transition:.5s}
+.mpal b{width:20px;height:20px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--line)}
+.cur{position:absolute;left:50%;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:rgba(214,51,108,.95);border:3px solid #fff;box-shadow:0 0 0 6px rgba(214,51,108,.35);transition:left 1s ease,top 1s ease;z-index:5;pointer-events:none}
+.toast{position:absolute;right:10px;bottom:10px;background:var(--ok);color:#fff;font-weight:700;font-size:.8rem;padding:6px 12px;border-radius:18px;opacity:0;transition:.4s;z-index:4}
+.pl[data-cur="0"] .b-create,.pl[data-cur="1"] .s-pl,.pl[data-cur="3"] .s-co,.pl[data-cur="5"] .b-dl{background:var(--gold);color:#fff;animation:pulse 1.2s infinite}
+.pl[data-cur="2"] .mposter,.pl[data-cur="2"] .mposter{border-color:var(--acc)}
+.pl:not([data-cur="0"]) .mposter>*{opacity:1}.pl:not([data-cur="0"]) .mposter{border-style:solid}
+.pl[data-cur="1"] .pt,.pl[data-cur="1"] .pd,.pl[data-cur="1"] .ps{color:#aaa}
+.pl[data-on~="3"] .mposter{background:#e3f0fc}.pl[data-on~="3"] .pt{color:#1f5a96}.pl[data-on~="3"] .mpal{opacity:1}
+.pl[data-cur="4"] .bd{opacity:1}
+.pl[data-cur="5"] .toast{opacity:1}
+.cap{background:var(--soft);border-left:5px solid var(--gold);padding:10px 14px;border-radius:8px;margin-top:10px;min-height:3.6em}
+.cap b{color:var(--acc);margin-right:8px}
+.ctl{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px}
+.ctl button{background:var(--acc);color:#fff;border:0;padding:6px 14px}
+.dots{display:flex;gap:6px;margin-left:8px}.dots i{width:10px;height:10px;border-radius:50%;background:var(--line);cursor:pointer}.dots i.a{background:var(--gold);transform:scale(1.3)}
+.phone{max-width:480px;margin:auto;background:#222;padding:10px;border-radius:22px}
+.scr{position:relative;aspect-ratio:3/2;border-radius:12px;overflow:hidden;background:#000}
+.scr svg{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:0;transition:filter .8s}
+.pl[data-on~="4"] .scr svg{filter:brightness(1.15)}
+.gr{position:absolute;inset:0;opacity:0;transition:opacity .6s;background:linear-gradient(#fff9,#fff9) 33.33% 0/1px 100% no-repeat,linear-gradient(#fff9,#fff9) 66.66% 0/1px 100% no-repeat,linear-gradient(#fff9,#fff9) 0 33.33%/100% 1px no-repeat,linear-gradient(#fff9,#fff9) 0 66.66%/100% 1px no-repeat}
+.pl[data-on~="1"] .gr{opacity:1}
+.gear{position:absolute;right:3%;top:4%;color:#fff;font-size:1.3rem;border-radius:50%;width:30px;height:30px;text-align:center;line-height:30px}
+.pl[data-cur="0"] .gear{animation:pulse 1.2s infinite}
+.fr{position:absolute;left:66.7%;top:33.5%;width:56px;height:56px;border:2px dashed #e8736b;border-radius:4px;transform:translate(-50%,-50%);opacity:0}
+.pl[data-cur="2"] .fr{opacity:1;animation:pulse 1.2s infinite}
+.pl[data-on~="3"] .fr{opacity:1;border:2px solid #f6c94a;animation:focus .8s both}
+.sl{position:absolute;right:7%;top:16%;height:68%;width:4px;background:#fffa;border-radius:2px;opacity:0;transition:.5s}
+.sl b{position:absolute;left:50%;top:65%;transform:translate(-50%,-50%);font-size:1.25rem;transition:top 1s}
+.pl[data-on~="3"] .sl{opacity:1}.pl[data-on~="4"] .sl b{top:22%}
+.sh{position:absolute;right:3%;bottom:6%;width:34px;height:34px;border-radius:50%;background:#fff;border:4px solid #bbb}
+.pl[data-cur="5"] .sh{animation:pulse 1.2s infinite}
+.fl{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}.pl[data-cur="5"] .fl{animation:flash .7s 1s}
+@media(max-width:700px){.mock{height:300px}.mside{width:62px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+@keyframes shine{0%{background-position:0 50%}100%{background-position:200% 50%}}
+@keyframes float{50%{transform:translateY(-5px)}}
+@keyframes kb{from{opacity:.3;transform:scale(1.12) translateY(8px)}to{opacity:1;transform:none}}
+@keyframes glow{50%{box-shadow:0 0 18px rgba(142,63,181,.35)}}
+header.top{border-image:linear-gradient(90deg,#5b2186,#c39be3,#d6336c) 1}
+footer{border-top:0;background:linear-gradient(120deg,#4a1a6e,#7d2a7a,#a8243f);color:#fff;background-size:200% 200%;animation:grad 10s infinite alternate}
+.logo,h2,.hero h1,.ph h1{background:linear-gradient(90deg,#5b2186,#b0408f,#d6336c,#8e3fb5,#5b2186);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+.hero h1,.ph h1{animation:up .9s both,shine 6s linear infinite}
+h2{border-image:linear-gradient(#d6336c,#8e3fb5) 1}
+.ph{background:linear-gradient(120deg,#f1e2ff,#fde3ee,#ecd9ff);background-size:200% 200%;animation:grad 8s infinite alternate}
+.bar nav a.on,.pn a,.ctl button,button{background:linear-gradient(90deg,#7b2fa8,#d6336c,#7b2fa8);background-size:200% auto;color:#fff;border:0;animation:shine 4s linear infinite}
+.bar nav a.on{color:#fff}
+a.tile{border-top:5px solid #c39be3}a.tile:hover{border-top-color:var(--gold)}
+.card{transition:transform .3s,box-shadow .3s}.card:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(110,40,150,.15)}
+figure svg,figure .poster,.wheel{animation:float 6s ease-in-out infinite}
+.wheel{animation:spin 30s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.verse{background:linear-gradient(90deg,#f3e6fb,#fde7ef,#f3e6fb);background-size:200% auto;animation:shine 8s linear infinite,glow 4s ease-in-out infinite}
+.how{background:linear-gradient(120deg,#f3e6fb,#fff)}
+.rv.in li{animation:up .6s both}.rv.in li:nth-child(2){animation-delay:.1s}.rv.in li:nth-child(3){animation-delay:.2s}.rv.in li:nth-child(4){animation-delay:.3s}.rv.in li:nth-child(5){animation-delay:.4s}.rv.in li:nth-child(n+6){animation-delay:.5s}
+.vp{margin:18px 0;background:linear-gradient(135deg,#2a0f3d,#5b1f5e,#7a1f3d);background-size:200% 200%;animation:grad 10s infinite alternate;border-radius:14px;padding:12px;color:#fff;box-shadow:0 8px 22px rgba(80,20,90,.3)}
+.vh{font-weight:800;margin:0 4px 8px}
+.vstage{position:relative;aspect-ratio:16/9;background:#1b0a28;border-radius:10px;overflow:hidden}
+.vs{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .8s;padding:14px}
+.vs.on{opacity:1}.vs.on>*{animation:kb 1.4s ease-out both}
+.vs figure{margin:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.vs figure svg{width:100%;height:100%;border:0;animation:none}
+.vs .cols{width:100%}.vs .poster{max-width:80%}
+.vtxt{font-size:1.15rem;text-align:center;max-width:85%;color:#fff}.vtxt span{display:block;font-size:2.6rem;animation:bob 2s infinite}
+.vcap{min-height:2.6em;margin:8px 4px 6px;font-weight:600}
+.vbar{height:5px;background:#ffffff33;border-radius:3px;overflow:hidden}.vbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#c39be3,#ff5c8a)}
+.vctl{display:flex;gap:8px;align-items:center;margin-top:8px;font-size:.9rem}.vctl button{padding:5px 14px}
+
+.hero h1{text-wrap:balance;max-width:820px}
+.wwrap{position:relative;width:170px;height:170px;margin:auto}
+.wwrap .wheel{animation:spin 20s linear infinite,sat 4s ease-in-out infinite}
+@keyframes sat{50%{filter:saturate(1.5) brightness(1.08)}}
+.orb{position:absolute;inset:0;animation:spin 5s linear infinite}
+.orb::before{content:"";position:absolute;top:-7px;left:50%;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:#fff;box-shadow:0 0 12px #d6336c,0 0 0 3px #8e3fb5}
+.wc{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.05rem;transition:color .6s,transform .6s}
+.wc.pop{transform:scale(1.25)}
+.harm{background:var(--soft);border-radius:12px;padding:10px 14px;margin-top:8px}
+.hl{font-weight:800;color:var(--head);transition:opacity .4s}
+.hs{display:flex;gap:8px;margin-top:6px}.hs span{flex:1;height:38px;border-radius:8px;transition:background .9s,transform .5s}
+.harm.go .hs span{transform:scale(1.08)}
+@keyframes pop{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
+@keyframes wave{50%{transform:translateY(-6px)}}
+.sw span{position:relative;overflow:hidden;transition:flex .4s;animation:pop .6s both,wave 3s ease-in-out infinite}
+.sw span:nth-child(2){animation-delay:.15s,.3s}.sw span:nth-child(3){animation-delay:.3s,.6s}.sw span:nth-child(4){animation-delay:.45s,.9s}
+.sw span::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);background-size:250% 100%;animation:shine 3.5s linear infinite}
+.sw span:hover{flex:2}
+.ytbox{margin:20px 0;padding:14px 16px;border-radius:14px;background:linear-gradient(135deg,#f3e6fb,#fde7ef);border:1px solid var(--line)}
+.ytbox h3{margin-top:0}
+.ytg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.yt p{margin:6px 2px 0;font-weight:700;font-size:.9rem;color:var(--head)}
+.ytf{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#1b0a28;box-shadow:0 6px 16px rgba(110,40,150,.2);transition:transform .3s}
+.ytf:hover{transform:scale(1.02)}
+.ytf iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ytl{color:var(--gold);font-weight:700}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute;border:0" aria-hidden="true"><defs>
+<symbol id="sc" viewBox="0 0 300 200"><rect width="300" height="200" fill="#bfe1fa"/><circle cx="200" cy="67" r="20" fill="#f6c94a"><animate attributeName="r" values="20;23;20" dur="3s" repeatCount="indefinite"/></circle><path d="M0 140 Q80 100 150 135 T300 125 V200 H0Z" fill="#8cc97a"/><rect x="60" y="112" width="8" height="30" fill="#8a6a4a"/><circle cx="64" cy="105" r="18" fill="#4f9d5d"/></symbol>
+<symbol id="ps" viewBox="0 0 60 80"><circle cx="30" cy="22" r="14" fill="#f2c9a0"/><path d="M4 80 Q4 44 30 44 Q56 44 56 80Z" fill="#2f7fc9"/></symbol>
+</defs></svg>
+
+<div id="fileAviso" style="display:none;background:#d6336c;color:#fff;text-align:center;padding:10px 16px;font-weight:700">Está viendo el archivo desde su computador: los videos de YouTube no funcionan así (error 153). Súbalo a internet (por ejemplo, Netlify Drop) para verlos dentro de la página.</div>
+<header class="top"><div class="bar"><a class="logo" href="#inicio">✝ Bethesda Norte · Imágenes</a>
+<nav id="nav"><a href="#inicio">Inicio</a><a href="#fundamentos">Fundamentos</a><a href="#composicion">Composición</a><a href="#luz">Luz y color</a><a href="#diseno">Diseño</a><a href="#practica">Práctica</a><a href="#tutoriales">Tutoriales</a><a href="#recursos">Recursos</a></nav></div></header>
+
+<!-- INICIO -->
+<div class="page" id="p-inicio">
+<section class="hero"><small>Centro Misionero Bethesda Norte · Equipo de comunicaciones</small>
+<h1>“Hágase todo decentemente y&nbsp;con&nbsp;orden”</h1>
+<p>Aprenda paso a paso a crear fotos, afiches y diapositivas claras y ordenadas para el ministerio, aunque nunca haya estudiado diseño. Solo necesita un celular y ganas de servir.</p><p><em>1 Corintios 14:40</em></p></section>
+<main>
+<div class="tiles">
+<a class="tile" href="#fundamentos"><span class="i">🌱</span><b>Fundamentos</b>Qué es una imagen, qué es componer y por qué importa.</a>
+<a class="tile" href="#composicion"><span class="i">🖼️</span><b>Composición</b>Encuadre, tercios, punto focal, simetría, líneas, aire y planos.</a>
+<a class="tile" href="#luz"><span class="i">🌤️</span><b>Luz y color</b>Cómo aprovechar la luz y elegir colores que combinen.</a>
+<a class="tile" href="#diseno"><span class="i">✏️</span><b>Diseño gráfico</b>Jerarquía, tipografía y principios para afiches legibles.</a>
+<a class="tile" href="#practica"><span class="i">📱</span><b>Práctica</b>Fotos con el celular, edición sencilla, herramientas y tamaños.</a>
+<a class="tile" href="#tutoriales"><span class="i">🎬</span><b>Tutoriales animados</b>Vea paso a paso cómo crear un afiche y tomar una buena foto.</a>
+<a class="tile" href="#recursos"><span class="i">✅</span><b>Recursos</b>Lista de verificación, glosario y ejercicios.</a></div>
+<div class="card cols"><div><h3>¿Cómo usar este sitio?</h3><p>Recorra las secciones en orden. Cada concepto tiene una <strong>explicación</strong>, un <strong>dibujo de ejemplo</strong>, un cuadro de <strong>pasos prácticos</strong> y enlaces para <strong>ver videos</strong> del tema.</p></div>
+<div class="verse">“Todo lo que hagáis, hacedlo de corazón, como para el Señor.” <b>— Colosenses 3:23</b></div></div>
+</main></div>
+
+<!-- FUNDAMENTOS -->
+<div class="page" id="p-fundamentos"><div class="ph"><small>Sección 1</small><h1>Fundamentos</h1></div><main>
+<div class="card cols"><div><h3>¿Qué es una imagen y para qué sirve?</h3><p>Una imagen es un mensaje que se entiende con la vista. Antes de leer una palabra del afiche, la persona ya recibió una impresión: orden o desorden, cuidado o descuido.</p>
+<h3>¿Qué es componer?</h3><p>Es decidir <strong>qué se muestra, dónde se coloca y qué se deja fuera</strong>.</p>
+<div class="tip"><strong>Ejemplo:</strong> es como acomodar los muebles de la sala antes de recibir visitas: lo importante a la vista y el paso despejado.</div></div>
+<figure><svg viewBox="0 0 300 200"><use href="#sc"/></svg><figcaption>Una imagen sencilla y ordenada.</figcaption></figure></div>
+<div class="card"><h3>¿Por qué importa en la iglesia?</h3><p>Nuestras imágenes invitan a las actividades, anuncian el Evangelio y reflejan el cuidado con que servimos. Una imagen ordenada, clara y respetuosa ayuda a que el mensaje llegue sin distracciones.</p></div>
+<div class="verse">“Pero hágase todo decentemente y con orden.” <b>— 1 Corintios 14:40</b></div>
+<div class="pn"><span></span><a href="#composicion">Siguiente: Composición →</a></div></main></div>
+
+<!-- COMPOSICION -->
+<div class="page" id="p-composicion"><div class="ph"><small>Sección 2</small><h1>Composición</h1></div><main>
+<div class="card"><h3>Encuadre y formato</h3><p>El encuadre es el “marco” de lo que se ve. Elija el formato según el lugar donde se usará la imagen.</p>
+<div class="cols three keep">
+<figure><svg viewBox="0 0 120 80"><rect width="120" height="80" fill="#bfe1fa"/><text x="60" y="46" font-size="12" text-anchor="middle" fill="#1f5a96">Horizontal</text></svg><figcaption>Pantalla del templo, video</figcaption></figure>
+<figure><svg viewBox="0 0 80 120"><rect width="80" height="120" fill="#f9efd0"/><text x="40" y="64" font-size="11" text-anchor="middle" fill="#7a5d12">Vertical</text></svg><figcaption>Celular, historias, afiches</figcaption></figure>
+<figure><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#d9f0e2"/><text x="50" y="54" font-size="11" text-anchor="middle" fill="#2b6b45">Cuadrado</text></svg><figcaption>Publicaciones en redes</figcaption></figure></div>
+<div class="how"><strong>Cómo hacerlo:</strong> antes de la foto pregúntese “¿dónde se va a usar?” y gire el teléfono en consecuencia.</div></div>
+
+<div class="card"><h3>Regla de los tercios</h3><div class="cols"><div><p>Imagine la imagen dividida en 9 partes por 2 líneas verticales y 2 horizontales. Coloque lo importante sobre las líneas o en sus cruces, no siempre en el centro.</p>
+<div class="how"><strong>Cómo hacerlo:</strong><ol><li>Abra los ajustes de la cámara.</li><li>Active “Cuadrícula”.</li><li>Ponga al protagonista en un cruce.</li><li>Deje el horizonte arriba o abajo, nunca a la mitad.</li></ol></div></div>
+<figure><svg viewBox="0 0 300 200"><use href="#sc"/><g stroke="#fff" stroke-width="1.5"><line x1="100" y1="0" x2="100" y2="200"/><line x1="200" y1="0" x2="200" y2="200"/><line x1="0" y1="67" x2="300" y2="67"/><line x1="0" y1="133" x2="300" y2="133"/></g><circle cx="200" cy="67" r="26" fill="none" stroke="#d4584f" stroke-width="3"><animate attributeName="r" values="22;32;22" dur="2s" repeatCount="indefinite"/></circle></svg><figcaption>El sol está en un cruce de la cuadrícula.</figcaption></figure></div>
+<div class="cols"><figure><svg viewBox="0 0 150 100"><rect width="150" height="100" fill="#bfe1fa"/><rect y="50" width="150" height="50" fill="#8cc97a"/><circle cx="75" cy="50" r="12" fill="#f6c94a"/></svg><figcaption class="no">Poco atractiva: todo al centro.</figcaption></figure>
+<figure><svg viewBox="0 0 150 100"><rect width="150" height="100" fill="#bfe1fa"/><rect y="67" width="150" height="33" fill="#8cc97a"/><circle cx="100" cy="33" r="12" fill="#f6c94a"/></svg><figcaption class="ok">Mejor: horizonte en el tercio inferior.</figcaption></figure></div></div>
+
+<div class="card"><h3>Punto focal</h3><div class="cols"><div><p>Es lo primero que mira el ojo: el protagonista. Cada imagen debe tener <strong>uno solo</strong>.</p>
+<div class="tip"><strong>Ejemplo:</strong> en el templo todo está dispuesto para dirigir la mirada al púlpito.</div>
+<div class="how"><strong>Cómo hacerlo:</strong> toque al sujeto en la pantalla para enfocarlo y quite del cuadro lo que compita con él.</div></div>
+<figure><svg viewBox="0 0 150 100"><rect width="150" height="100" fill="#eef5fb"/><circle cx="105" cy="40" r="14" fill="#e8736b"/><circle cx="25" cy="70" r="5" fill="#cbd6e2"/><circle cx="60" cy="20" r="4" fill="#cbd6e2"/><circle cx="45" cy="85" r="6" fill="#cbd6e2"/></svg><figcaption>El círculo rojo manda.</figcaption></figure></div></div>
+
+<div class="card"><h3>Simetría y equilibrio</h3><div class="cols"><div><p>Una imagen <strong>simétrica</strong> es igual a ambos lados y transmite solemnidad (fachadas, altar, pasillos). Una <strong>equilibrada</strong> no es idéntica, pero ningún lado pesa demasiado más.</p>
+<div class="how"><strong>Cómo hacerlo:</strong> párese frente al centro del objeto y use la cuadrícula para que la línea central quede recta.</div></div>
+<figure><svg viewBox="0 0 200 150"><rect width="200" height="150" fill="#bfe1fa"/><rect x="50" y="60" width="100" height="75" fill="#f1e6c8"/><polygon points="40,62 100,25 160,62" fill="#a55c4a"/><rect x="97" y="8" width="6" height="22" fill="#e9b949"/><rect x="91" y="14" width="18" height="5" fill="#e9b949"/><path d="M88 135 V105 Q100 90 112 105 V135Z" fill="#7a5a3a"/><rect x="62" y="82" width="16" height="22" rx="8" fill="#5a9be0"/><rect x="122" y="82" width="16" height="22" rx="8" fill="#5a9be0"/><rect y="135" width="200" height="15" fill="#8cc97a"/></svg><figcaption>Fachada de templo simétrica.</figcaption></figure></div></div>
+
+<div class="card"><h3>Líneas guía y profundidad</h3><div class="cols"><div><p>Caminos, bancas, pasillos o cercas funcionan como flechas que llevan la mirada al punto focal y dan sensación de profundidad.</p>
+<div class="how"><strong>Cómo hacerlo:</strong> ubíquese al inicio del camino o pasillo y apunte para que las líneas se junten en el sujeto. Procure tres capas: algo cerca, el sujeto en medio y un fondo lejano.</div></div>
+<figure><svg viewBox="0 0 200 150"><rect width="200" height="75" fill="#bfe1fa"/><rect y="75" width="200" height="75" fill="#8cc97a"/><polygon points="85,75 115,75 190,150 10,150" fill="#d9c9a3"/><line x1="100" y1="75" x2="100" y2="150" stroke="#fff" stroke-width="2" stroke-dasharray="6 6"/><rect x="92" y="55" width="16" height="20" fill="#f1e6c8"/><polygon points="90,56 100,46 110,56" fill="#a55c4a"/></svg><figcaption>El camino lleva a la capilla.</figcaption></figure></div></div>
+
+<div class="card"><h3>Espacio negativo (“aire”)</h3><div class="cols"><div><p>Es la zona vacía alrededor del sujeto. Descansa la vista y es el mejor lugar para escribir texto.</p><div class="how"><strong>Cómo hacerlo:</strong> deje espacio libre en un lado (cielo, pared lisa) para colocar luego el título.</div></div>
+<figure><div class="poster" style="text-align:left;padding:34px 18px"><div class="t" style="max-width:55%">Culto de Gratitud</div><div class="d">Domingo 10:00 a. m.</div></div><figcaption>Mucho aire = lectura cómoda.</figcaption></figure></div></div>
+
+<div class="card"><h3>Planos y ángulos</h3><p>El plano es qué tan cerca se ve el sujeto. Cuide siempre que el <strong>fondo esté limpio</strong> (sin cables ni basureros).</p>
+<div class="cols three keep">
+<figure><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#bfe1fa"/><rect y="70" width="100" height="30" fill="#8cc97a"/><use href="#ps" x="42" y="50" width="16" height="22"/></svg><figcaption><b>General</b>: todo el lugar</figcaption></figure>
+<figure><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#bfe1fa"/><use href="#ps" x="22" y="14" width="56" height="86"/></svg><figcaption><b>Medio</b>: de la cintura arriba</figcaption></figure>
+<figure><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#bfe1fa"/><circle cx="50" cy="52" r="38" fill="#f2c9a0"/><circle cx="38" cy="46" r="3" fill="#333"/><circle cx="62" cy="46" r="3" fill="#333"/><path d="M38 66 Q50 76 62 66" stroke="#333" stroke-width="3" fill="none"/></svg><figcaption><b>Primer plano</b>: el rostro</figcaption></figure></div>
+<div class="how"><strong>Cómo hacerlo:</strong> tome a las personas a la altura de sus ojos. Evite fotografiar desde muy abajo o muy arriba: deforma y no favorece.</div></div>
+<div class="card"><h3>Uso básico de la cámara</h3>
+<p>En la iglesia usamos <strong>cámara y celular</strong>. Todo lo aprendido sobre composición sirve para ambos; la cámara solo ofrece más control sobre la luz y el enfoque.</p>
+<div class="cols"><div><h3>Partes principales</h3><ul>
+<li><strong>Objetivo (lente):</strong> el anillo de zoom acerca o aleja la imagen.</li>
+<li><strong>Disparador:</strong> presionado <em>a medias</em> enfoca; presionado <em>hasta el fondo</em> toma la foto.</li>
+<li><strong>Dial de modos:</strong> elige quién decide los ajustes, usted o la cámara.</li>
+<li><strong>Visor y pantalla:</strong> para encuadrar y revisar la foto.</li>
+<li><strong>Batería y tarjeta de memoria:</strong> revíselas siempre antes del culto.</li></ul></div>
+<figure><svg viewBox="0 0 220 150" role="img" aria-label="Cámara con sus partes"><rect width="220" height="150" fill="#f3e6fb"/><rect x="30" y="45" width="140" height="80" rx="12" fill="#3d2c4d"/><rect x="60" y="33" width="50" height="16" rx="4" fill="#3d2c4d"/><rect x="130" y="36" width="22" height="9" rx="3" fill="#d6336c"><animate attributeName="y" values="36;39;36" dur="2s" repeatCount="indefinite"/></rect><circle cx="100" cy="85" r="30" fill="#5b2186"/><circle cx="100" cy="85" r="20" fill="#1b0a28"/><circle cx="93" cy="78" r="5" fill="#c39be3"><animate attributeName="opacity" values="1;.3;1" dur="3s" repeatCount="indefinite"/></circle><circle cx="45" cy="58" r="6" fill="#c39be3"/><text x="140" y="26" font-size="10" fill="#5b2186">Disparador</text><text x="62" y="140" font-size="10" fill="#5b2186">Objetivo (lente)</text><text x="22" y="40" font-size="10" fill="#5b2186">Dial</text></svg><figcaption>Las partes que más usará de una cámara.</figcaption></figure></div>
+
+<h3>Los modos del dial</h3>
+<div style="overflow-x:auto"><table><tr><th>Modo</th><th>Qué hace</th><th>Cuándo usarlo</th></tr>
+<tr><td><b>AUTO</b></td><td>La cámara decide todo.</td><td>Para empezar o en un apuro.</td></tr>
+<tr><td><b>P</b></td><td>Automático, pero usted controla el ISO y el flash.</td><td>Eventos al aire libre.</td></tr>
+<tr><td><b>A / Av</b></td><td>Usted elige la apertura.</td><td>Retratos y predicación (fondo desenfocado).</td></tr>
+<tr><td><b>S / Tv</b></td><td>Usted elige la velocidad.</td><td>Personas en movimiento (alabanza, niños).</td></tr>
+<tr><td><b>M</b></td><td>Usted decide todo.</td><td>Cuando ya tenga práctica.</td></tr></table></div>
+
+<div class="cols"><div><h3>El triángulo de la exposición</h3><p>La luz de una foto depende de tres ajustes que trabajan juntos:</p><ul>
+<li><strong>Apertura (f/):</strong> número pequeño (f/2.8) = entra más luz y el fondo sale desenfocado; número grande (f/8) = todo nítido, ideal para fotos de grupo.</li>
+<li><strong>Velocidad:</strong> 1/125 o más rápida para que las personas no salgan movidas.</li>
+<li><strong>ISO:</strong> sensibilidad a la luz. 100–400 de día; 800–3200 dentro del templo. Más alto = más luz, pero más “grano”.</li></ul></div>
+<figure><svg viewBox="0 0 220 180" role="img" aria-label="Triángulo de la exposición"><rect width="220" height="180" fill="#fbf6ff"/><polygon points="110,22 22,158 198,158" fill="#f3e6fb" stroke="#8e3fb5" stroke-width="3"/><text x="110" y="112" font-size="13" text-anchor="middle" font-weight="bold" fill="#5b2186">Exposición</text><circle cx="110" cy="22" r="13" fill="#d6336c"><animate attributeName="r" values="11;15;11" dur="2s" repeatCount="indefinite"/></circle><circle cx="22" cy="158" r="13" fill="#8e3fb5"><animate attributeName="r" values="11;15;11" dur="2s" begin=".66s" repeatCount="indefinite"/></circle><circle cx="198" cy="158" r="13" fill="#c39be3"><animate attributeName="r" values="11;15;11" dur="2s" begin="1.33s" repeatCount="indefinite"/></circle><text x="132" y="20" font-size="11" fill="#3d2c4d">Apertura</text><text x="10" y="178" font-size="11" fill="#3d2c4d">Velocidad</text><text x="185" y="178" font-size="11" fill="#3d2c4d">ISO</text></svg><figcaption>Si cambia uno, ajuste los otros dos.</figcaption></figure></div>
+
+<h3>Enfoque y balance de blancos</h3>
+<p><strong>Enfoque:</strong> use un solo punto de enfoque y colóquelo sobre los ojos de la persona. <strong>AF-S</strong> para personas quietas; <strong>AF-C</strong> para quienes se mueven. <strong>Balance de blancos:</strong> corrige el color de la luz; si las fotos del templo salen amarillas o azuladas, elija el modo “Interior / Bombilla” o “Fluorescente”.</p>
+
+<h3>Ajustes sugeridos en la iglesia</h3>
+<div style="overflow-x:auto"><table><tr><th>Situación</th><th>Modo</th><th>Ajustes de partida</th></tr>
+<tr><td>Predicación (interior)</td><td>A / Av</td><td>f/2.8–4 · ISO 800–3200 · sin flash</td></tr>
+<tr><td>Alabanza con movimiento</td><td>S / Tv</td><td>1/250 · ISO automático</td></tr>
+<tr><td>Foto de grupo al aire libre</td><td>A / Av</td><td>f/8 · ISO 100–200 · sombra abierta</td></tr>
+<tr><td>Video del culto</td><td>M</td><td>Velocidad 1/50 (25 cps) o 1/60 (30 cps) · balance de blancos fijo</td></tr></table></div>
+
+<div class="how"><strong>Cómo sujetarla:</strong> mano derecha en la empuñadura, mano izquierda bajo el objetivo, codos pegados al cuerpo y el ojo en el visor. En predicaciones largas use trípode o monopié. Antes del culto: batería cargada, tarjeta con espacio y lente limpio. Durante el culto, nunca flash.</div>
+<div class="cols top"><div class="ok"><strong>Celular:</strong> siempre a mano, fácil de compartir, ideal para redes y momentos espontáneos.</div><div class="ok"><strong>Cámara:</strong> mejor calidad con poca luz, zoom real y fondos desenfocados; ideal para predicaciones, bautizos y eventos especiales.</div></div></div>
+<div class="vp"></div>
+<div class="ytbox"><h3>▶ Videos: regla de los tercios</h3><div class="ytg"><div class="yt"><div class="ytf"><iframe src="https://www.youtube.com/embed/N-yOZv7SP68?rel=0&playsinline=1" title="Aprende la regla de los tercios en 1 minuto" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><p>Aprende la regla de los tercios en 1 minuto · <a class="ytl" href="https://www.youtube.com/watch?v=N-yOZv7SP68" target="_blank" rel="noopener">abrir en YouTube</a></p></div><div class="yt"><div class="ytf"><iframe src="https://www.youtube.com/embed/om3F59IgY8g?rel=0&playsinline=1" title="Todo sobre la regla de los tercios" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><p>Todo sobre la regla de los tercios · <a class="ytl" href="https://www.youtube.com/watch?v=om3F59IgY8g" target="_blank" rel="noopener">abrir en YouTube</a></p></div></div></div>
+<div class="ytbox"><h3>▶ Videos: uso de la cámara y exposición</h3><div class="ytg"><div class="yt"><div class="ytf"><iframe src="https://www.youtube.com/embed/-Y6bisvdNGk?rel=0&playsinline=1" title="El triángulo de la exposición explicado fácil" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><p>El triángulo de la exposición explicado fácil · <a class="ytl" href="https://www.youtube.com/watch?v=-Y6bisvdNGk" target="_blank" rel="noopener">abrir en YouTube</a></p></div><div class="yt"><div class="ytf"><iframe src="https://www.youtube.com/embed/szbjFfYOpk4?rel=0&playsinline=1" title="El triángulo de exposición (Aprender a Mirar)" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><p>El triángulo de exposición (Aprender a Mirar) · <a class="ytl" href="https://www.youtube.com/watch?v=szbjFfYOpk4" target="_blank" rel="noopener">abrir en YouTube</a></p></div></div></div>
+<div class="verse">“Los cielos cuentan la gloria de Dios.” <b>— Salmo 19:1</b></div>
+<div class="pn"><a href="#fundamentos">← Fundamentos</a><a href="#luz">Siguiente: Luz y color →</a></div></main></div>
+
+<!-- LUZ -->
+<div class="page" id="p-luz"><div class="ph"><small>Sección 3</small><h1>Luz y color</h1></div><main>
+<div class="card"><h3>La luz</h3><p>Sin luz no hay imagen. La mejor luz es la natural y suave, que llega de frente o de lado.</p>
+<div class="cols"><figure><svg viewBox="0 0 150 110"><rect width="150" height="110" fill="#d9ecfb"/><circle cx="130" cy="20" r="12" fill="#f6c94a"/><use href="#ps" x="45" y="25" width="55" height="80"/></svg><figcaption class="ok">Bien: luz de frente, se ve el rostro.</figcaption></figure>
+<figure><svg viewBox="0 0 150 110"><rect width="150" height="110" fill="#f7e4a0"/><circle cx="75" cy="40" r="26" fill="#fff3b0"/><circle cx="75" cy="55" r="14" fill="#5b4a3e"/><path d="M45 110 Q45 70 75 70 Q105 70 105 110Z" fill="#3e4a58"/></svg><figcaption class="no">Mal: contraluz, la persona queda oscura.</figcaption></figure></div>
+<div class="how"><strong>Cómo hacerlo:</strong><ol><li>Ponga a la persona de cara a la luz (ventana o sol suave).</li><li>Toque su rostro en la pantalla.</li><li>Deslice el ícono del sol para aclarar u oscurecer.</li><li>En el templo, no use flash: aplana y molesta. Evite el sol directo del mediodía.</li></ol></div></div>
+<div class="card"><h3>El color</h3><div class="cols"><div><p>Los colores primarios son rojo, amarillo y azul; al mezclarlos nacen verde, naranja y violeta. Ordenados en círculo forman el <strong>círculo cromático</strong>, que ayuda a combinar bien.</p>
+<ul><li><strong>Análogos</strong> (vecinos): resultado tranquilo.</li><li><strong>Complementarios</strong> (opuestos): resultado vivo; úselos en poca cantidad.</li><li><strong>Un solo color</strong> en varios tonos: sobrio y elegante.</li></ul><div class="harm"><div class="hl">Análogos</div><div class="hs"><span></span><span></span><span></span></div></div></div>
+<figure><div class="wwrap"><div class="wheel" role="img" aria-label="Círculo cromático"></div><div class="orb"></div><div class="wc">Rojo</div></div><figcaption>Círculo cromático</figcaption></figure></div>
+<h3>Paletas sencillas</h3>
+<div class="sw"><span style="background:#5b2186"></span><span style="background:#c39be3"></span><span style="background:#d6336c"></span><span style="background:#fff"></span></div><p><small>Morado · Lila · Frambuesa · Blanco (la de este sitio)</small></p>
+<div class="sw"><span style="background:#5c8a5a"></span><span style="background:#c9b38c"></span><span style="background:#efe6cf"></span><span style="background:#fffdf6"></span></div><p><small>Verde · Madera · Arena · Marfil</small></p>
+<p>Use máximo 3 o 4 colores. <strong>Significados tradicionales:</strong> blanco (pureza), azul (cielo, paz), rojo (sacrificio), dorado (gloria), verde (vida y esperanza), morado (reflexión).</p></div>
+<div class="vp"></div>
+<div class="pn"><a href="#composicion">← Composición</a><a href="#diseno">Siguiente: Diseño →</a></div></main></div>
+
+<!-- DISENO -->
+<div class="page" id="p-diseno"><div class="ph"><small>Sección 4</small><h1>Diseño gráfico básico</h1></div><main>
+<div class="card"><h3>Jerarquía visual</h3><div class="cols"><div><p>Es el orden de importancia. En un afiche se lee primero el <strong>título</strong>, luego la <strong>fecha y hora</strong> y al final los detalles. Se logra con el tamaño, el grosor y el color.</p></div>
+<figure><div class="poster"><div class="t">Retiro de Jóvenes</div><div class="d">Sábado 14 de marzo · 8:00 a. m.</div><div class="s">Templo principal · Entrada libre · Traiga su Biblia</div></div><figcaption>1.º título · 2.º fecha · 3.º detalles</figcaption></figure></div></div>
+<div class="card"><h3>Tipografía</h3><p>Es el estilo de las letras. Use <strong>máximo dos tipos</strong>: uno con serifa (“patitas”, como Georgia o Times) para títulos y uno sin serifa (Arial, Calibri) para el texto.</p>
+<div class="cols"><div class="ok"><div style="font:700 1.4rem Georgia,serif">Bienvenidos a la casa de Dios</div><div style="font:1rem Arial,sans-serif">Letras claras y fáciles de leer.</div><small>Recomendadas: Georgia, Times, Arial, Calibri, Open Sans.</small></div>
+<div class="no"><div style="font:italic 700 1.4rem 'Brush Script MT',cursive">Bienvenidos a la casa de Dios</div><div style="font:1rem Impact,fantasy;letter-spacing:2px">Letras difíciles de leer</div><small>Evitar: decorativas, con sombras, contornos o brillos.</small></div></div></div>
+<div class="card"><h3>Cuatro principios</h3><ul><li><strong>Alineación:</strong> todo alineado al mismo lado, no puesto “al ojo”.</li><li><strong>Proximidad:</strong> lo relacionado va junto (fecha y hora en un solo bloque).</li><li><strong>Repetición:</strong> mismos colores, letras y logo en todo el material para que se reconozca nuestra iglesia.</li><li><strong>Contraste:</strong> texto oscuro sobre fondo claro, o al revés.</li></ul>
+<h3>Legibilidad en pantalla y proyección</h3><p>En el culto la gente lee desde lejos: letra grande (mínimo 32 puntos), pocas líneas, fondo liso y buen contraste. No ponga texto sobre fotos muy cargadas.</p></div>
+<div class="vp"></div>
+<div class="ytbox"><h3>▶ Videos: diseño en Canva</h3><div class="ytg"><div class="yt"><div class="ytf"><iframe src="https://www.youtube.com/embed/mKeyoRoN7hw?rel=0&playsinline=1" title="Cómo hacer un flyer en Canva gratis" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><p>Cómo hacer un flyer en Canva gratis · <a class="ytl" href="https://www.youtube.com/watch?v=mKeyoRoN7hw" target="_blank" rel="noopener">abrir en YouTube</a></p></div><div class="yt"><div class="ytf"><iframe src="https://www.youtube.com/embed/Y2PIHB64saM?rel=0&playsinline=1" title="Cómo hacer un póster en Canva" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><p>Cómo hacer un póster en Canva · <a class="ytl" href="https://www.youtube.com/watch?v=Y2PIHB64saM" target="_blank" rel="noopener">abrir en YouTube</a></p></div><div class="yt"><div class="ytf"><iframe src="https://www.youtube.com/embed/fimLiLHqvI0?rel=0&playsinline=1" title="Cómo hacer un folleto en Canva para imprimir" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><p>Cómo hacer un folleto en Canva para imprimir · <a class="ytl" href="https://www.youtube.com/watch?v=fimLiLHqvI0" target="_blank" rel="noopener">abrir en YouTube</a></p></div></div></div>
+<div class="pn"><a href="#luz">← Luz y color</a><a href="#practica">Siguiente: Práctica →</a></div></main></div>
+
+<!-- PRACTICA -->
+<div class="page" id="p-practica"><div class="ph"><small>Sección 5</small><h1>Cómo hacerlo en la práctica</h1></div><main>
+<div class="cols top"><div class="card"><h3>Tomar buenas fotos con el celular</h3>
+<ol><li><strong>Limpie el lente</strong> con un paño suave (el error más común).</li><li><strong>Active la cuadrícula.</strong></li><li><strong>Enfoque</strong> tocando al sujeto.</li><li><strong>Ajuste la luz</strong> con el ícono del sol.</li><li><strong>Sostenga firme</strong> con ambas manos y codos pegados al cuerpo.</li><li><strong>Tome varias</strong> y elija la mejor.</li><li><strong>Acérquese caminando</strong>, no con zoom digital.</li></ol></div>
+<div class="card"><h3>Edición sencilla</h3>
+<ol><li><strong>Recortar:</strong> quite lo que sobra y aplique los tercios.</li><li><strong>Enderezar:</strong> corrija el horizonte torcido.</li><li><strong>Brillo:</strong> aclare un poco si quedó oscura.</li><li><strong>Contraste:</strong> súbalo suavemente.</li><li><strong>Con moderación:</strong> la imagen debe verse natural y honesta.</li></ol></div></div>
+<div class="tiles" style="margin-top:0"><div class="card"><h3>Snapseed</h3><p>Para editar fotos en el celular: recortar, enderezar, brillo y contraste.</p></div><div class="card"><h3>Canva</h3><p>Para afiches, invitaciones y diapositivas. Elija las plantillas más sobrias. <a href="#tutoriales" style="color:var(--acc);font-weight:700">Ver tutorial animado →</a></p></div><div class="card"><h3>Galería del celular</h3><p>Ya trae recorte y ajustes básicos; suficiente para empezar.</p></div></div>
+<div class="card" style="overflow-x:auto"><h3>Tamaños recomendados</h3>
+<table><tr><th>Uso</th><th>Formato</th><th>Tamaño (px)</th></tr><tr><td>Publicación en redes</td><td>Cuadrado / vertical</td><td>1080×1080 / 1080×1350</td></tr><tr><td>Historias o estados</td><td>Vertical</td><td>1080×1920</td></tr><tr><td>Pantalla del templo</td><td>Horizontal</td><td>1920×1080</td></tr><tr><td>Afiche impreso (carta)</td><td>Vertical</td><td>2550×3300</td></tr></table></div>
+<div class="vp"></div>
+<div class="ytbox"><h3>▶ Video: fotografía con celular</h3><div class="ytg"><div class="yt"><div class="ytf"><iframe src="https://www.youtube.com/embed/krnwo18wj_Y?rel=0&playsinline=1" title="Curso de fotografía con celular: el zoom y la regla de los tercios" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><p>Curso de fotografía con celular: el zoom y la regla de los tercios · <a class="ytl" href="https://www.youtube.com/watch?v=krnwo18wj_Y" target="_blank" rel="noopener">abrir en YouTube</a></p></div></div></div>
+<div class="pn"><a href="#diseno">← Diseño</a><a href="#tutoriales">Siguiente: Tutoriales →</a></div></main></div>
+
+<!-- TUTORIALES -->
+<div class="page" id="p-tutoriales"><div class="ph"><small>Sección 6</small><h1>Tutoriales animados</h1></div><main>
+<div class="card"><p>Estos tutoriales se reproducen aquí mismo, sin salir de la página. Puede <strong>pausar</strong>, ir al paso <strong>anterior o siguiente</strong>, o tocar los puntos para saltar a un paso. El círculo dorado le muestra dónde tocar.</p></div>
+
+<h2>Tutorial 1: Crear un afiche paso a paso (estilo Canva)</h2>
+<div class="pl" id="pl1"><div class="mock">
+<div class="mtop"><span class="mlogo">Editor de diseño</span><span class="mbtn b-create">+ Crear diseño</span><span class="mbtn b-dl">Descargar</span></div>
+<div class="mbody"><div class="mside"><span class="s-pl">Plantillas</span><span>Texto</span><span class="s-co">Colores</span><span>Fotos</span></div>
+<div class="mcan"><div class="mposter"><div class="pt"><i class="bd">1</i><span>Título del evento</span></div><div class="pd"><i class="bd">2</i><span>Fecha y hora</span></div><div class="ps"><i class="bd">3</i>Templo principal · Entrada libre</div></div>
+<div class="mpal"><b style="background:#1f5a96"></b><b style="background:#e9b949"></b><b style="background:#fff"></b></div></div></div>
+<div class="cur"></div><div class="toast">✔ Descargado</div></div>
+<div class="cap"><b class="n"></b><span class="tx"></span></div>
+<div class="ctl"><button data-a="prev">⏮</button><button data-a="play">⏸ Pausar</button><button data-a="next">⏭</button><span class="dots"></span></div></div>
+<p><small>Es una simulación didáctica: los menús reales de Canva pueden verse un poco distintos, pero los pasos son los mismos.</small></p>
+<div class="how"><strong>Recuerde:</strong> un título grande, fecha y hora destacadas, máximo 3 colores y 2 tipos de letra. Revise la lista de verificación en <a href="#recursos" style="color:var(--acc);font-weight:700">Recursos</a>.</div>
+
+<h2>Tutorial 2: Tomar una buena foto con el celular</h2>
+<div class="pl" id="pl2"><div class="phone"><div class="scr">
+<svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice"><use href="#sc"/></svg>
+<div class="gr"></div><div class="fr"></div><div class="gear">⚙</div><div class="sl"><b>☀</b></div><div class="sh"></div><div class="fl"></div>
+<div class="toast">✔ Foto guardada</div><div class="cur"></div></div></div>
+<div class="cap"><b class="n"></b><span class="tx"></span></div>
+<div class="ctl"><button data-a="prev">⏮</button><button data-a="play">⏸ Pausar</button><button data-a="next">⏭</button><span class="dots"></span></div></div>
+<div class="tip"><strong>Ejemplo:</strong> practique este mismo tutorial en el patio del templo y compare la foto con y sin cuadrícula.</div>
+<div class="pn"><a href="#practica">← Práctica</a><a href="#recursos">Siguiente: Recursos →</a></div></main></div>
+
+<!-- RECURSOS -->
+<div class="page" id="p-recursos"><div class="ph"><small>Sección 7</small><h1>Recursos</h1></div><main>
+<h2>Errores comunes</h2>
+<div class="cols top"><div class="no"><strong>Evite:</strong> sujeto cortado por las articulaciones, fondo desordenado, horizonte torcido, texto sobre fotos recargadas, más de dos tipos de letra.</div><div class="ok"><strong>Procure:</strong> un solo punto focal, fondo limpio, horizonte recto, buen contraste y pocos colores.</div></div>
+<h2>Lista de verificación antes de publicar</h2>
+<div class="card"><ul class="check"><li>¿Se entiende el mensaje en tres segundos?</li><li>¿Hay un solo punto focal?</li><li>¿El fondo está limpio y la imagen derecha?</li><li>¿La luz es suave y se ve bien el rostro?</li><li>¿Se lee el texto con facilidad desde lejos?</li><li>¿Usé pocos colores y máximo dos tipos de letra?</li><li>¿La fecha, hora y lugar están correctos?</li><li>¿Tengo permiso de las personas que aparecen (sobre todo menores)?</li><li>¿La imagen es respetuosa y acorde a los valores de nuestra iglesia?</li></ul></div>
+<h2>Ejercicios prácticos</h2>
+<div class="cols top"><div class="card"><h3>1. Los tercios</h3><p>Fotografíe un objeto tres veces: una al centro y dos con la regla de los tercios. Compárelas con su equipo.</p></div><div class="card"><h3>2. La luz</h3><p>Fotografíe a un compañero bajo el sol, junto a una ventana y a contraluz. Elijan la mejor y expliquen por qué.</p></div>
+<div class="card"><h3>3. Un afiche</h3><p>En Canva, haga una invitación con 3 colores, 2 tipos de letra y la fecha bien destacada.</p></div><div class="card"><h3>4. Diapositiva legible</h3><p>Prepare una con un versículo y proyéctela. Pida que la lean desde el fondo del templo.</p></div></div>
+<h2>Glosario</h2>
+<div class="card"><dl><dt>Composición</dt><dd>Forma de organizar los elementos en la imagen.</dd><dt>Encuadre</dt><dd>Lo que queda dentro del marco.</dd><dt>Punto focal</dt><dd>Lo primero que mira el ojo.</dd><dt>Exposición</dt><dd>Cantidad de luz de la imagen: poca la oscurece, mucha la “quema”.</dd><dt>Contraluz</dt><dd>Luz que viene desde atrás del sujeto y lo oscurece.</dd><dt>Contraste</dt><dd>Diferencia entre dos elementos (claro/oscuro, grande/pequeño).</dd><dt>Jerarquía</dt><dd>Orden de importancia de lo que se ve.</dd><dt>Tipografía</dt><dd>Estilo de las letras.</dd><dt>Serifa</dt><dd>Pequeños remates en los extremos de las letras.</dd><dt>Resolución</dt><dd>Cantidad de puntos de una imagen; a más puntos, más nitidez.</dd><dt>Paleta</dt><dd>Conjunto de colores elegidos para un trabajo.</dd></dl></div>
+<div class="verse">“Todo lo hizo hermoso en su tiempo.” <b>— Eclesiastés 3:11</b></div>
+<div class="pn"><a href="#tutoriales">← Tutoriales</a><a href="#inicio">Volver al inicio</a></div></main></div>
+
+<footer><strong>Centro Misionero Bethesda Norte</strong><br><em>“Hágase todo decentemente y con orden” — 1 Corintios 14:40</em><br>Formación para el equipo de comunicaciones y multimedia</footer>
+<script>
+(function(){var n=[['Rojo','#e8736b'],['Naranja','#f0a45a'],['Amarillo','#d9b52f'],['Verde','#5fae4a'],['Azul','#3f84d1'],['Violeta','#8b5fd6'],['Rosa','#d2589f']],k=0;
+setInterval(function(){k=(k+1)%n.length;document.querySelectorAll('.wc').forEach(function(w){w.textContent=n[k][0];w.style.color=n[k][1];w.classList.add('pop');setTimeout(function(){w.classList.remove('pop')},500)})},1400);
+var h=[['Análogos (vecinos: tranquilo)',['#5b2186','#8e3fb5','#c39be3']],['Complementarios (opuestos: vivo)',['#5b2186','#f2c94c','#fff']],['Monocromático (un color: elegante)',['#d6336c','#e8789e','#f7c6d9']],['Análogos cálidos',['#a8243f','#d6336c','#f0a45a']]],j=0;
+function sh(){document.querySelectorAll('.harm').forEach(function(b){b.querySelector('.hl').textContent=h[j][0];b.querySelectorAll('.hs span').forEach(function(s,m){s.style.background=h[j][1][m]});b.classList.add('go');setTimeout(function(){b.classList.remove('go')},500)});j=(j+1)%h.length}
+sh();setInterval(sh,3200)})();
+function vids(){document.querySelectorAll('.vp').forEach(function(vp){var pg=vp.closest('.page'),sl=[];
+pg.querySelectorAll('main figure').forEach(function(f){if(f.closest('.vp'))return;var c=f.cloneNode(true),fc=c.querySelector('figcaption');sl.push({n:c,t:fc?fc.textContent:''});if(fc)fc.remove()});
+if(!sl.length)pg.querySelectorAll('main ol li').forEach(function(li){var d=document.createElement('div');d.className='vtxt';d.innerHTML='<span>📱</span>'+li.innerHTML;sl.push({n:d,t:li.textContent})});
+if(!sl.length){vp.remove();return}
+vp.innerHTML='<div class="vh">🎬 Video resumen de esta sección</div><div class="vstage"></div><div class="vcap"></div><div class="vbar"><i></i></div><div class="vctl"><button data-v="p">⏸ Pausar</button><button data-v="n">⏭ Siguiente</button><span class="vn"></span></div>';
+var st=vp.querySelector('.vstage'),cap=vp.querySelector('.vcap'),bar=vp.querySelector('.vbar i'),vn=vp.querySelector('.vn'),pb=vp.querySelector('[data-v=p]'),i=0,t=0,play=true;
+sl.forEach(function(o){var w=document.createElement('div');w.className='vs';w.appendChild(o.n);st.appendChild(w)});
+function show(k){i=(k+sl.length)%sl.length;t=0;[].forEach.call(st.children,function(w,m){w.classList.toggle('on',m===i)});cap.textContent=sl[i].t;vn.textContent='Escena '+(i+1)+' de '+sl.length}
+pb.onclick=function(){play=!play;pb.textContent=play?'⏸ Pausar':'▶ Reproducir'};vp.querySelector('[data-v=n]').onclick=function(){show(i+1)};
+setInterval(function(){if(!play||!pg.classList.contains('show'))return;t++;bar.style.width=(t/55*100)+'%';if(t>=55)show(i+1)},100);show(0)})}
+vids();
+var ids=['inicio','fundamentos','composicion','luz','diseno','practica','tutoriales','recursos'];
+var io=window.IntersectionObserver?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1}):null;
+function reveal(){document.querySelectorAll('.page.show .card,.page.show figure,.page.show .verse,.page.show .tile,.page.show .how').forEach(function(n){if(!io||n.classList.contains('in'))return;n.classList.add('rv');io.observe(n)})}
+function player(id,caps,pos,cb){var el=document.getElementById(id),i=0,play=true,cur=el.querySelector('.cur'),cap=el.querySelector('.tx'),num=el.querySelector('.n'),dots=el.querySelector('.dots'),pb=el.querySelector('[data-a=play]');
+caps.forEach(function(_,k){var d=document.createElement('i');d.onclick=function(){set(k)};dots.appendChild(d)});
+function set(k){i=(k+caps.length)%caps.length;var on=[];for(var j=0;j<=i;j++)on.push(j);el.dataset.on=on.join(' ');el.dataset.cur=i;cur.style.left=pos[i][0]+'%';cur.style.top=pos[i][1]+'%';num.textContent=(i+1)+'/'+caps.length;cap.textContent=caps[i];[].forEach.call(dots.children,function(d,m){d.className=m===i?'a':''});if(cb)cb(i)}
+el.querySelector('[data-a=prev]').onclick=function(){set(i-1)};el.querySelector('[data-a=next]').onclick=function(){set(i+1)};
+pb.onclick=function(){play=!play;pb.textContent=play?'⏸ Pausar':'▶ Reproducir'};
+setInterval(function(){if(play&&document.getElementById('p-tutoriales').classList.contains('show'))set(i+1)},4500);set(0)}
+player('pl1',['Abra el editor y toque «Crear diseño»; elija el tamaño «Afiche».','Abra «Plantillas» y elija una sobria: pocos adornos y letras claras.','Toque el título y escriba su texto; haga lo mismo con la fecha y la hora.','Abra «Colores» y cambie la paleta: máximo 3 o 4 colores.','Revise la jerarquía: 1.º el título, 2.º la fecha y hora, 3.º los detalles.','Pulse «Descargar»: PNG para redes sociales o PDF para imprimir.'],[[34,7],[9,28],[58,40],[9,52],[58,52],[88,7]],function(i){var a=document.querySelector('#pl1 .pt span'),b=document.querySelector('#pl1 .pd span');a.textContent=i>=2?'Retiro de Jóvenes':'Título del evento';b.textContent=i>=2?'Sábado 14 de marzo · 8:00 a. m.':'Fecha y hora'});
+player('pl2',['Abra la cámara y toque el engranaje de Ajustes (⚙).','Active la «Cuadrícula»: aparecen las líneas de los tercios.','Ponga al protagonista (aquí, el sol) en un cruce de las líneas.','Toque la pantalla sobre el sujeto para enfocarlo.','Deslice el sol hacia arriba o abajo para ajustar la luz.','Sostenga firme el teléfono y toque el botón blanco para tomar la foto.'],[[93,12],[50,50],[66.7,33.5],[66.7,33.5],[93,35],[94,86]]);
+function go(){var h=(location.hash||'#inicio').slice(1);if(ids.indexOf(h)<0)h='inicio';
+ids.forEach(function(i){document.getElementById('p-'+i).classList.toggle('show',i===h)});
+document.querySelectorAll('#nav a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+h)});
+window.scrollTo(0,0);reveal()}
+addEventListener('hashchange',go);go();
+</script>
+<script>if(location.protocol==="file:")document.getElementById("fileAviso").style.display="block";</script>
+</body>
+</html>
