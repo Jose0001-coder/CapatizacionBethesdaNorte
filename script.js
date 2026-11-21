@@ -544,3 +544,8 @@ document.addEventListener('click',function(e){if(e.target.closest&&e.target.clos
 document.addEventListener('keydown',function(e){if(e.target.closest&&e.target.closest('[role=tab]'))setTimeout(save,0)});
 addEventListener('hashchange',function(){setTimeout(function(){save();show()},0)});
 save();show()})();
+
+/* ----- Título de la pestaña del navegador según la sección abierta ----- */
+(function(){var base=document.title;
+function t(){var pg=document.querySelector('.page.show'),h=pg&&pg.id!=='p-inicio'&&pg.querySelector('.ph h1');document.title=h?h.textContent+' — Imágenes con Excelencia':base}
+addEventListener('hashchange',function(){setTimeout(t,0)});t()})();
