@@ -778,6 +778,11 @@ a.tile.trow.done::after{top:8px;right:8px}
  linear-gradient(currentColor,currentColor) 100% 100%/24px 2px no-repeat,linear-gradient(currentColor,currentColor) 100% 100%/2px 24px no-repeat}
 [data-theme="dark"] .ph{background:var(--soft)}
 
+/* ===== v23 · Fotos reales de la iglesia en las lecciones ===== */
+figure img.figph{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.planos figure img.figph{aspect-ratio:1;object-fit:cover}
+.planos figure:first-child img.figph{object-position:30% 50%}
+
 /* ===== v22 · Íconos reales de las fuentes ===== */
 .exsrc{display:inline-flex;align-items:center;gap:6px}
 .srcic{width:14px;height:14px;object-fit:contain;flex:none}
