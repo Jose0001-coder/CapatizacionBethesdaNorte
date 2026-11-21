@@ -1,4 +1,4 @@
-var AV_S=[['fundamentos','Fundamentos'],['composicion','Composición'],['camara','La cámara'],['luz','Luz y color'],['diseno','Diseño'],['practica','Práctica'],['eventos','Eventos'],['etica','Ética y permisos'],['video','Video'],['tutoriales','Tutoriales'],['recursos','Recursos']];
+var AV_S=[['diseno','Diseño y color'],['fundamentos','Fundamentos'],['composicion','Composición'],['camara','La cámara'],['practica','Práctica'],['eventos','Eventos'],['etica','Ética y permisos'],['video','Video'],['tutoriales','Tutoriales'],['recursos','Recursos']];
 /* Comportamiento — Imágenes con Excelencia · Centro Misionero Bethesda Norte */
 (function(){var n=[['Rojo','#e8736b'],['Naranja','#f0a45a'],['Amarillo','#d9b52f'],['Verde','#5fae4a'],['Azul','#3f84d1'],['Violeta','#8b5fd6'],['Rosa','#d2589f']],k=0;
 setInterval(function(){k=(k+1)%n.length;document.querySelectorAll('.wc').forEach(function(w){w.textContent=n[k][0];w.style.color=n[k][1];w.classList.add('pop');setTimeout(function(){w.classList.remove('pop')},500)})},1400);
@@ -16,7 +16,7 @@ function show(k){i=(k+sl.length)%sl.length;t=0;[].forEach.call(st.children,funct
 pb.onclick=function(){play=!play;pb.textContent=play?'⏸ Pausar':'▶ Reproducir'};vp.querySelector('[data-v=n]').onclick=function(){show(i+1)};
 setInterval(function(){if(!play||!pg.classList.contains('show'))return;t++;bar.style.width=(t/55*100)+'%';if(t>=55)show(i+1)},100);show(0)})}
 vids();
-var ids=['inicio','plan','fundamentos','composicion','camara','luz','diseno','practica','eventos','etica','video','tutoriales','recursos'];
+var ids=['inicio','plan','fundamentos','composicion','camara','diseno','practica','eventos','etica','video','tutoriales','recursos'];
 var io=window.IntersectionObserver?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1}):null;
 function reveal(){document.querySelectorAll('.page.show .card,.page.show figure,.page.show .verse,.page.show .tile,.page.show .how').forEach(function(n){if(!io||n.classList.contains('in'))return;n.classList.add('rv');io.observe(n)})}
 function player(id,caps,pos,cb){var el=document.getElementById(id),i=0,play=true,cur=el.querySelector('.cur'),cap=el.querySelector('.tx'),num=el.querySelector('.n'),dots=el.querySelector('.dots'),pb=el.querySelector('[data-a=play]');
@@ -28,7 +28,7 @@ setInterval(function(){if(play&&document.getElementById('p-tutoriales').classLis
 player('pl1',['Abra el editor y toque «Crear diseño»; elija el tamaño «Afiche».','Abra «Plantillas» y elija una sobria: pocos adornos y letras claras.','Toque el título y escriba su texto; haga lo mismo con la fecha y la hora.','Abra «Colores» y cambie la paleta: máximo 3 o 4 colores.','Revise la jerarquía: 1.º el título, 2.º la fecha y hora, 3.º los detalles.','Pulse «Descargar»: PNG para redes sociales o PDF para imprimir.'],[[34,7],[9,28],[58,40],[9,52],[58,52],[88,7]],function(i){var a=document.querySelector('#pl1 .pt span'),b=document.querySelector('#pl1 .pd span');a.textContent=i>=2?'Retiro de Jóvenes':'Título del evento';b.textContent=i>=2?'Sábado 14 de marzo · 8:00 a. m.':'Fecha y hora'});
 player('pl2',['Abra la cámara y toque el engranaje de Ajustes (⚙).','Active la «Cuadrícula»: aparecen las líneas de los tercios.','Ponga al protagonista (aquí, el sol) en un cruce de las líneas.','Toque la pantalla sobre el sujeto para enfocarlo.','Deslice el sol hacia arriba o abajo para ajustar la luz.','Sostenga firme el teléfono y toque el botón blanco para tomar la foto.'],[[93,12],[50,50],[66.7,33.5],[66.7,33.5],[93,35],[94,86]]);
 function go(){var h=(location.hash||'#inicio').slice(1);if(ids.indexOf(h)<0)h='inicio';
-ids.forEach(function(i){document.getElementById('p-'+i).classList.toggle('show',i===h)});
+ids.forEach(function(i){var p=document.getElementById('p-'+i);if(p)p.classList.toggle('show',i===h)});
 document.querySelectorAll('#nav a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+h)});
 window.scrollTo(0,0);reveal()}
 addEventListener('hashchange',go);go();
@@ -97,7 +97,7 @@ w.querySelectorAll('.pin').forEach(function(x){x.classList.toggle('on',x===p)});
 info.innerHTML='<b>'+p.textContent+'. '+p.dataset.h+'</b><p>'+p.dataset.t+'</p>';info.classList.remove('flash');void info.offsetWidth;info.classList.add('flash')})})});
 
 /* ===== Enlace directo al laboratorio ===== */
-document.querySelectorAll('[data-go]').forEach(function(a){a.addEventListener('click',function(){var id=a.dataset.go;setTimeout(function(){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'})},450)})});
+document.querySelectorAll('[data-go]').forEach(function(a){a.addEventListener('click',function(){var id=a.dataset.go;setTimeout(function(){var el=document.getElementById(id);openPanelFor(el);if(el)el.scrollIntoView({behavior:'smooth'})},450)})});
 
 
 /* ================= Interacciones por sección ================= */
@@ -264,26 +264,34 @@ window.open('https://wa.me/?text='+encodeURIComponent(t),'_blank','noopener')})}
 
 /* ----- Plan de clases ----- */
 (function(){var w=$('#plwrap');if(!w)return;
-var ET=['Etapa 1 · Bases de la imagen','Etapa 2 · Color, diseño y culto','Etapa 3 · Ministerio en acción'];
-var P=[[0,'Fundamentos y presentación del sitio',['fundamentos'],'Tomar la foto «antes» del templo, sin indicaciones.'],
-[0,'Composición I: encuadre, tercios y punto focal',['composicion'],'Ejercicio 1: los tercios.'],
-[0,'Composición II: simetría, líneas, aire y planos',['composicion'],'Cinco fotos en el templo, una por principio.'],
-[0,'La cámara: modos, exposición y ajustes',['camara'],'Practicar con el simulador y probar el modo A/Av.'],
-[1,'Luz y color: contraste y armonías',['luz'],'Ejercicio 2 y laboratorio de contraste.'],
-[1,'Diseño gráfico: jerarquía y tipografía',['diseno'],'Armar un afiche con cinco estrellas en el editor.'],
-[1,'Práctica: celular, edición y Canva',['practica','tutoriales'],'Ejercicio 3: primer afiche en Canva.'],
+var ET=['Etapa 1 · Diseño y color','Etapa 2 · La imagen y la cámara','Etapa 3 · Ministerio en acción'];
+/* [etapa, tema, secciones (sección/pestaña abre esa parte), tarea] */
+var P=[[0,'Diseño I: el color',['diseno/0'],'Armar en Adobe Color una paleta de tres colores para un evento de la iglesia.'],
+[0,'Diseño II: el contraste',['diseno/1'],'Medir el contraste de dos afiches o diapositivas y corregir el que no llegue a 4,5.'],
+[0,'Diseño III: letras y jerarquía',['diseno/2'],'Escribir un afiche en tres niveles y elegir dos tipografías de Google Fonts.'],
+[0,'Diseño IV: el afiche completo',['diseno/3'],'Proyecto de la etapa: diseñar un afiche real de la iglesia y revisarlo con «Antes de publicar».'],
+[1,'Fundamentos: qué es una imagen y qué es componer',['fundamentos'],'Tomar la foto «antes» del templo, sin indicaciones.'],
+[1,'Composición I: encuadre, tercios y punto focal',['composicion'],'Ejercicio 1: la misma escena con el sujeto al centro y con los tercios.'],
+[1,'Composición II: simetría, líneas, aire y planos',['composicion'],'Cinco fotos en el templo, una por principio.'],
+[1,'La luz: calidad, dirección y hora dorada',['camara/0'],'Ejercicio 2: fotografiar a la misma persona con luz de frente, de lado y a contraluz.'],
+[1,'La cámara: modos, exposición y ajustes',['camara/1'],'Reto de exposición: el púlpito con f/2.8 y con f/8 en modo A/Av.'],
+[1,'Práctica: celular, edición y Canva',['practica','tutoriales'],'Ejercicio 3: pasar a Canva el afiche del proyecto, con 3 colores y 2 tipos de letra.'],
 [2,'Fotografía de eventos, ética y permisos',['eventos','etica'],'Cubrir un culto con la lista de fotos.'],
-[2,'Video para redes: grabar y editar',['video'],'Grabar y editar un video de 30 segundos.'],
+[2,'Video para redes: grabar y editar',['video'],'Terminar y exportar el video de 30 segundos.'],
 [2,'Proyecto final y entrega de certificados',['recursos'],'Presentar foto, afiche y video; comparar con la foto «antes».']];
-var NM={fundamentos:'Fundamentos',composicion:'Composición',camara:'La cámara',luz:'Luz y color',diseno:'Diseño',practica:'Práctica',tutoriales:'Tutoriales',proyeccion:'Proyección',eventos:'Eventos',etica:'Ética',video:'Video',recursos:'Recursos'};
+var NM={fundamentos:'Fundamentos',composicion:'Composición',camara:'La cámara',diseno:'Diseño y color',practica:'Práctica',tutoriales:'Tutoriales',eventos:'Eventos',etica:'Ética',video:'Video',recursos:'Recursos'};
+/* 'seccion/n' enlaza a esa pestaña y la nombra con su título (por ejemplo «La cámara · La luz») */
+function plLink(k){var a=k.split('/'),id=a[1]!=null?'t-'+a[0]+'-'+a[1]:'',el=id&&document.getElementById(id),lb=el&&el.querySelector('.stl');
+return '<a href="#'+a[0]+'"'+(id?' data-tab="'+id+'"':'')+'>'+NM[a[0]]+(lb?' · '+lb.textContent:'')+'</a>'}
+w.addEventListener('click',function(e){var a=e.target.closest('a[data-tab]');if(!a)return;var id=a.dataset.tab;setTimeout(function(){var t=document.getElementById(id);if(t)t.click();window.scrollTo(0,0)},60)});
 var inp=$('#pldate'),sk=store.get('bethesda-plan-skips')||[];
 function nextSat(dt){var r=new Date(dt);r.setDate(r.getDate()+((6-r.getDay()+7)%7));return r}
 var st=store.get('bethesda-plan-inicio');inp.value=st||nextSat(new Date()).toISOString().slice(0,10);
 function draw(){var s0=nextSat(new Date(inp.value+'T12:00'));var today=new Date();today.setHours(0,0,0,0);var nextFound=false,h='',et=-1;
 P.forEach(function(p,i){var extra=sk.filter(function(k){return k<=i}).length,dt=new Date(s0);dt.setDate(dt.getDate()+7*(i+extra));
-if(p[0]!==et){et=p[0];h+='<div class="pletapa">'+ET[et]+'</div>'}
+if(p[0]!==et){et=p[0];h+='<div class="pletapa e'+et+'">'+ET[et]+'</div>'}
 var isNext=!nextFound&&dt>=today;if(isNext)nextFound=true;
-h+='<div class="plrow'+(dt<today?' past':'')+(isNext?' next':'')+'"><div class="pln">'+(i+1)+'</div><div class="pld">'+dt.toLocaleDateString('es-CO',{weekday:'short',day:'numeric',month:'short'})+(isNext?'<em>Próxima clase</em>':'')+'</div><div class="plt"><b>'+p[1]+'</b><span>'+p[2].map(function(k){return '<a href="#'+k+'">'+NM[k]+'</a>'}).join(' · ')+'</span><small>📝 Tarea: '+p[3]+'</small></div><button type="button" class="ghost plskip" data-i="'+i+'">Aplazar</button></div>'});
+h+='<div class="plrow e'+p[0]+(dt<today?' past':'')+(isNext?' next':'')+'"><div class="pln">'+(i+1)+'</div><div class="pld">'+dt.toLocaleDateString('es-CO',{weekday:'short',day:'numeric',month:'short'})+(isNext?'<em>Próxima clase</em>':'')+'</div><div class="plt"><b>'+p[1]+'</b><span>'+p[2].map(plLink).join(' · ')+'</span><small><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg>Tarea: '+p[3]+'</small></div><button type="button" class="ghost plskip" data-i="'+i+'">Aplazar</button></div>'});
 var fin=new Date(s0);fin.setDate(fin.getDate()+7*(P.length-1+sk.length));
 w.innerHTML=h+'<p class="plend">Duración: '+P.length+' clases · Termina el '+fin.toLocaleDateString('es-CO',{day:'numeric',month:'long',year:'numeric'})+'</p>'}
 inp.addEventListener('change',function(){store.set('bethesda-plan-inicio',inp.value);draw()});
@@ -355,13 +363,13 @@ fundamentos:[['¿Qué es componer una imagen?',['Decidir qué se muestra, dónde
 composicion:[['Según la regla de los tercios, ¿dónde va el protagonista?',['En un cruce de las líneas','Exactamente en el centro','Pegado al borde'],'Los cruces son los puntos fuertes.'],
 ['¿Dónde NO conviene dejar el horizonte?',['Justo a la mitad','En el tercio inferior','En el tercio superior'],'A la mitad divide la foto en dos partes iguales.'],
 ['¿A qué altura se fotografía a una persona?',['A la altura de sus ojos','Desde muy abajo','Desde muy arriba'],'Así no se deforma y se ve natural.']],
-camara:[['Para desenfocar el fondo en una predicación se usa…',['Un número f/ pequeño, como f/2.8','Un número f/ grande, como f/16','ISO 100'],'Apertura grande (número pequeño) = fondo desenfocado.'],
+camara:[['¿Qué pasa con una persona a contraluz?',['Queda oscura','Se ve mejor iluminada','Sale desenfocada'],'La luz detrás oscurece el rostro.'],
+['Para desenfocar el fondo en una predicación se usa…',['Un número f/ pequeño, como f/2.8','Un número f/ grande, como f/16','ISO 100'],'Apertura grande (número pequeño) = fondo desenfocado.'],
 ['¿Qué velocidad evita que las personas salgan movidas?',['1/125 o más rápida','1/15','1/30'],'Con velocidades lentas el movimiento se ve borroso.'],
 ['¿Qué pasa al subir mucho el ISO?',['Aparece «grano» en la foto','La foto se desenfoca','Sale en blanco y negro'],'Más ISO da más luz, pero más grano.']],
-luz:[['¿Qué pasa con una persona a contraluz?',['Queda oscura','Se ve mejor iluminada','Sale desenfocada'],'La luz detrás oscurece el rostro.'],
+diseno:[['Azul y naranja son colores…',['Complementarios','Análogos','Monocromáticos'],'Están opuestos en el círculo cromático.'],
 ['¿Cuál es el contraste mínimo recomendado para textos?',['4,5 a 1','1,5 a 1','2 a 1'],'Con menos de 4,5 el texto cuesta leerlo.'],
-['Azul y naranja son colores…',['Complementarios','Análogos','Monocromáticos'],'Están opuestos en el círculo cromático.']],
-diseno:[['¿Qué debe leerse primero en un afiche?',['El título','La dirección','El logo'],'La jerarquía empieza por el título.'],
+['¿Qué debe leerse primero en un afiche?',['El título','La dirección','El logo'],'La jerarquía empieza por el título.'],
 ['¿Cuántos tipos de letra se recomiendan como máximo?',['Dos','Cinco','Uno distinto por línea'],'Más de dos se ve desordenado.'],
 ['Si el texto va sobre una foto recargada, ¿qué hace?',['Pone un recuadro oscuro detrás','Usa letra más delgada','Nada'],'El recuadro devuelve el contraste.']],
 practica:[['¿Qué hace primero antes de tomar una foto con el celular?',['Limpiar el lente','Usar el zoom','Activar el flash'],'Un lente sucio deja la foto opaca.'],
@@ -390,7 +398,7 @@ $('.eqres',box).innerHTML='<b>'+(n===qs.length?'🎉 ¡Excelente! ':'')+'Resulta
 if(e.target.closest('.eqagain'))render()});render()})})();
 
 /* ----- Generador de plantillas ----- */
-var SELLO=new Image();SELLO.src='img/sello.png';
+var SELLO=new Image();SELLO.src='img/favicon.png';
 function wrapText(c,t,x,y,maxW,lh){var w=t.split(' '),line='',lines=[];w.forEach(function(p){var test=line?line+' '+p:p;if(c.measureText(test).width>maxW&&line){lines.push(line);line=p}else line=test});lines.push(line);lines.forEach(function(l,i){c.fillText(l,x,y+i*lh)});return lines.length}
 (function(){var cv=$('#tgC');if(!cv)return;var c=cv.getContext('2d');
 function draw(){var sz=segVal('tgF').split('x'),W=+sz[0],H=+sz[1],sty=segVal('tgS');cv.width=W;cv.height=H;var k=Math.min(W,H)/1080;
@@ -400,11 +408,11 @@ c.save();c.strokeStyle=pal[3];c.globalAlpha=.35;c.lineWidth=6*k;[[-.1,-.05,.55],
 var m=70*k,sz2=150*k;if(SELLO.complete&&SELLO.naturalWidth)c.drawImage(SELLO,m,m,sz2,sz2);
 c.fillStyle=pal[2];c.textAlign='left';c.textBaseline='alphabetic';c.font='600 '+(30*k)+'px Georgia,serif';c.fillText('Centro Misionero',m+sz2+24*k,m+50*k);c.font='700 '+(54*k)+'px Georgia,serif';c.fillText('BETHESDA',m+sz2+24*k,m+105*k);c.font='600 '+(24*k)+'px Georgia,serif';c.fillText('NORTE',m+sz2+24*k,m+140*k);
 c.fillStyle=pal[3];c.fillRect(m+sz2+24*k,m+115*k,220*k,4*k);
-c.textAlign='center';c.fillStyle=pal[2];var t=$('#tgT').value||'Título';var fs=(W>H?120:130)*k;c.font='800 '+fs+'px Nunito,"Segoe UI",sans-serif';
+c.textAlign='center';c.fillStyle=pal[2];var t=$('#tgT').value||'Título';var fs=(W>H?120:130)*k;c.font='800 '+fs+'px "Source Sans 3","Segoe UI",sans-serif';
 var ty=W>H?H*.5:H*.55,nl=wrapText(c,t.toUpperCase(),W/2,ty,W-2*m,fs*1.05);
 var dy=ty+nl*fs*1.05+20*k;c.fillStyle=pal[4];var dw=Math.min(W-2*m,760*k);c.fillRect(W/2-dw/2,dy-50*k,dw,74*k);
-c.fillStyle=pal[2];c.font='700 '+(44*k)+'px Nunito,"Segoe UI",sans-serif';c.fillText($('#tgD').value,W/2,dy);
-c.fillStyle=pal[3];c.fillRect(W/2-60*k,H-m-90*k,120*k,5*k);c.fillStyle=pal[2];c.font='600 '+(34*k)+'px Nunito,"Segoe UI",sans-serif';wrapText(c,$('#tgL').value,W/2,H-m-30*k,W-2*m,40*k)}
+c.fillStyle=pal[2];c.font='700 '+(44*k)+'px "Source Sans 3","Segoe UI",sans-serif';c.fillText($('#tgD').value,W/2,dy);
+c.fillStyle=pal[3];c.fillRect(W/2-60*k,H-m-90*k,120*k,5*k);c.fillStyle=pal[2];c.font='600 '+(34*k)+'px "Source Sans 3","Segoe UI",sans-serif';wrapText(c,$('#tgL').value,W/2,H-m-30*k,W-2*m,40*k)}
 ['tgT','tgD','tgL'].forEach(function(id){$('#'+id).addEventListener('input',draw)});seg('tgF',draw);seg('tgS',draw);SELLO.addEventListener('load',draw);
 if(document.fonts)document.fonts.ready.then(draw);
 $('#tgDl').addEventListener('click',function(){var msg=$('#tgMsg');try{var a=document.createElement('a');a.download='plantilla-bethesda.png';a.href=cv.toDataURL('image/png');a.click();msg.textContent='✔ Imagen descargada.';msg.className='fbk g'}catch(e){msg.textContent='Para descargar, abra la página desde internet (GitHub Pages).';msg.className='fbk w'}});draw()})();
@@ -428,12 +436,12 @@ if(falt.length){msg.textContent='Le faltan '+falt.length+' secciones por marcar:
 store.set('bethesda-nombre',nm.value);
 function draw(){var W=1600,H=1130;c.fillStyle='#fbfaf6';c.fillRect(0,0,W,H);c.strokeStyle='#033d60';c.lineWidth=22;c.strokeRect(30,30,W-60,H-60);c.strokeStyle='#d99a1b';c.lineWidth=4;c.strokeRect(62,62,W-124,H-124);
 if(LOGO.naturalWidth){var lw=520,lh=lw*LOGO.naturalHeight/LOGO.naturalWidth;c.drawImage(LOGO,W/2-lw/2,95,lw,lh)}
-c.textAlign='center';c.fillStyle='#033d60';c.font='800 58px Nunito,"Segoe UI",sans-serif';c.fillText('CERTIFICADO DE PARTICIPACIÓN',W/2,400);
-c.fillStyle='#1f3344';c.font='400 30px Nunito,"Segoe UI",sans-serif';c.fillText('Se otorga a',W/2,465);
+c.textAlign='center';c.fillStyle='#033d60';c.font='700 60px "Source Serif 4",Georgia,serif';c.fillText('CERTIFICADO DE PARTICIPACIÓN',W/2,400);
+c.fillStyle='#1f3344';c.font='400 30px "Source Sans 3","Segoe UI",sans-serif';c.fillText('Se otorga a',W/2,465);
 c.fillStyle='#033d60';c.font='700 76px Georgia,serif';c.fillText(nm.value.trim(),W/2,565);c.fillStyle='#d99a1b';c.fillRect(W/2-380,590,760,4);
-c.fillStyle='#1f3344';c.font='400 30px Nunito,"Segoe UI",sans-serif';wrapText(c,'por completar la capacitación «Imágenes con Excelencia» en composición, fotografía, diseño, proyección y comunicación para el ministerio.',W/2,660,1100,44);
-c.font='600 26px Nunito,"Segoe UI",sans-serif';c.fillText('Bogotá, '+new Date().toLocaleDateString('es-CO',{day:'numeric',month:'long',year:'numeric'}),W/2,790);
-c.strokeStyle='#1f3344';c.lineWidth=2;[[W*.3,'Pastor(a)'],[W*.7,'Instructor']].forEach(function(p){c.beginPath();c.moveTo(p[0]-190,920);c.lineTo(p[0]+190,920);c.stroke();c.font='600 26px Nunito,"Segoe UI",sans-serif';c.fillText(p[1],p[0],958)});
+c.fillStyle='#1f3344';c.font='400 30px "Source Sans 3","Segoe UI",sans-serif';wrapText(c,'por completar la capacitación «Imágenes con Excelencia» en composición, fotografía, diseño, proyección y comunicación para el ministerio.',W/2,660,1100,44);
+c.font='600 26px "Source Sans 3","Segoe UI",sans-serif';c.fillText('Bogotá, '+new Date().toLocaleDateString('es-CO',{day:'numeric',month:'long',year:'numeric'}),W/2,790);
+c.strokeStyle='#1f3344';c.lineWidth=2;[[W*.3,'Pastor(a)'],[W*.7,'Instructor']].forEach(function(p){c.beginPath();c.moveTo(p[0]-190,920);c.lineTo(p[0]+190,920);c.stroke();c.font='600 26px "Source Sans 3","Segoe UI",sans-serif';c.fillText(p[1],p[0],958)});
 c.fillStyle='#0e7a8c';c.font='italic 22px Georgia,serif';c.fillText('«Todo lo que hagáis, hacedlo de corazón, como para el Señor» · Colosenses 3:23',W/2,1040);
 $('#certprev').classList.add('show');try{$('#cdl').href=cv.toDataURL('image/png');msg.textContent='✔ Certificado listo. Revíselo y descárguelo.';msg.className='fbk g'}catch(e){msg.textContent='Vista previa lista. Para descargar, abra la página desde internet (GitHub Pages).';msg.className='fbk w'}}
 if(LOGO.complete)draw();else LOGO.onload=draw})})();
@@ -443,7 +451,7 @@ if(LOGO.complete)draw();else LOGO.onload=draw})})();
 (function(){var lb=document.getElementById('lbox');if(lb&&lb.parentNode!==document.body)document.body.appendChild(lb);
 $$('.exvis.real').forEach(function(v){var img=$('img',v);function bad(){v.classList.add('noimg')}
 img.addEventListener('error',bad);
-$('.exg',v).addEventListener('click',function(e){e.stopPropagation();v.classList.toggle('guia');this.textContent=v.classList.contains('guia')?'✕ Ocultar guía':'👁 Ver guía'});
+var g=$('.exg',v);if(g)g.addEventListener('click',function(e){e.stopPropagation();v.classList.toggle('guia');this.textContent=v.classList.contains('guia')?'✕ Ocultar guía':'👁 Ver guía'});
 img.addEventListener('click',function(){if(!lb)return;$('img',lb).src=img.src.replace(/width=\d+/,'width=1400');$('p',lb).textContent=img.alt;lb.hidden=false})});
 if(lb)lb.addEventListener('click',function(e){if(e.target.tagName!=='IMG')lb.hidden=true});})();
 
@@ -485,3 +493,54 @@ b.addEventListener('click',function(){open(dp)});dp.querySelector(':scope>b').ad
 $('.rclose',m).addEventListener('click',close);m.addEventListener('click',function(e){if(e.target===m)close()});
 $('.rprev',m).addEventListener('click',function(){show(idx-1)});$('.rnext',m).addEventListener('click',function(){show(idx+1)});
 document.addEventListener('keydown',function(e){if(m.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowRight')show(idx+1);if(e.key==='ArrowLeft')show(idx-1)});})();
+
+/* ----- Pestañas de cada sección (semanas y partes) ----- */
+function openPanelFor(el){var p=el&&el.closest('.spanel');if(!p||!p.hidden)return;var t=document.querySelector('[role=tab][aria-controls="'+p.id+'"]');if(t)t.click()}
+(function(){
+$$('.subnav[role=tablist]').forEach(function(nav){var tabs=$$('[role=tab]',nav);
+function more(){nav.classList.toggle('more',nav.scrollLeft+nav.clientWidth<nav.scrollWidth-4)}
+nav.addEventListener('scroll',more,{passive:true});addEventListener('resize',more);addEventListener('hashchange',function(){setTimeout(more,0)});more();
+function sel(t,focus){tabs.forEach(function(x){var on=x===t,p=document.getElementById(x.getAttribute('aria-controls'));
+x.classList.toggle('on',on);x.setAttribute('aria-selected',on?'true':'false');x.tabIndex=on?0:-1;if(p)p.hidden=!on});
+if(focus)t.focus();
+/* Volver al inicio de la parte elegida: la barra de pestañas queda pegada bajo el encabezado y el contenido empieza justo debajo */
+var hh=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hh'))||62,p=document.getElementById(t.getAttribute('aria-controls'));
+if(p){var y=Math.round(p.getBoundingClientRect().top+window.scrollY-hh-nav.offsetHeight-34);if(window.scrollY>y+2)window.scrollTo({top:Math.max(0,y),behavior:'instant'})}
+if(typeof reveal==='function')reveal()}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){sel(t)});
+t.addEventListener('keydown',function(e){var k=e.key,n=k==='ArrowRight'?i+1:k==='ArrowLeft'?i-1:k==='Home'?0:k==='End'?tabs.length-1:null;
+if(n===null)return;e.preventDefault();sel(tabs[(n+tabs.length)%tabs.length],true)})})})})();
+
+/* ----- Altura del encabezado para la barra de pestañas ----- */
+(function(){var hd=$('header.top');if(!hd)return;function f(){document.documentElement.style.setProperty('--hh',hd.offsetHeight+'px')}
+f();addEventListener('resize',f);addEventListener('load',f)})();
+
+/* ----- Modo claro / oscuro y logo para cada modo ----- */
+(function(){var root=document.documentElement,btn=$('#themebtn');
+var logos=$$('img[data-dark]');logos.forEach(function(i){i.dataset.light=i.getAttribute('src')});
+function apply(t){var dark=t==='dark';root.setAttribute('data-theme',t);
+logos.forEach(function(i){i.src=dark?i.dataset.dark:i.dataset.light});
+if(btn){btn.setAttribute('aria-pressed',dark?'true':'false');btn.setAttribute('aria-label',dark?'Activar modo claro':'Activar modo oscuro');btn.title=dark?'Modo claro':'Modo oscuro';
+var u=$('use',btn);if(u)u.setAttribute('href',dark?'#i-sun':'#i-moon')}}
+apply(root.getAttribute('data-theme')==='dark'?'dark':'light');
+if(btn)btn.addEventListener('click',function(){var t=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem('bethesda-tema',t)}catch(e){}apply(t)});
+if(window.matchMedia){var mq=matchMedia('(prefers-color-scheme: dark)'),f=function(e){var s=null;try{s=localStorage.getItem('bethesda-tema')}catch(x){}if(!s)apply(e.matches?'dark':'light')};
+if(mq.addEventListener)mq.addEventListener('change',f);else if(mq.addListener)mq.addListener(f)}})();
+
+/* ----- Continuar donde quedó: recuerda la última clase y semana abiertas ----- */
+(function(){var KEY='bethesda-ultimo',skip=['inicio','plan','noencontrada'];
+var btn=document.querySelector('.hero .hbtn:not(.alt)'),note=null;if(!btn)return;
+var base={href:btn.getAttribute('href'),text:btn.textContent};
+function save(){var h=(location.hash||'#inicio').slice(1);if(skip.indexOf(h)>=0||ids.indexOf(h)<0)return;
+var pg=document.getElementById('p-'+h);if(!pg)return;var vis=pg.querySelector('.spanel:not([hidden])'),t=pg.querySelector('.ph h1');
+store.set(KEY,{p:h,panel:vis?vis.id:null,week:vis?(vis.dataset.label||''):'',title:t?t.textContent:h})}
+function show(){var s=store.get(KEY);
+if(!s||!document.getElementById('p-'+s.p)){btn.setAttribute('href',base.href);btn.textContent=base.text;btn.removeAttribute('data-panel');if(note)note.hidden=true;return}
+btn.setAttribute('href','#'+s.p);btn.dataset.panel=s.panel||'';btn.textContent='Continuar: '+(s.week||s.title);
+if(!note){note=document.createElement('p');note.className='hresume';btn.parentNode.insertAdjacentElement('afterend',note)}
+note.hidden=false;note.innerHTML='Última vez: <b></b>';note.querySelector('b').textContent=s.title+(s.week&&s.week!==s.title?' · '+s.week:'')}
+btn.addEventListener('click',function(){var id=btn.dataset.panel;if(!id)return;setTimeout(function(){var tab=document.querySelector('[role=tab][aria-controls="'+id+'"]');if(tab&&tab.getAttribute('aria-selected')!=='true')tab.click();window.scrollTo(0,0)},60)});
+document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('[role=tab]'))setTimeout(save,0)});
+document.addEventListener('keydown',function(e){if(e.target.closest&&e.target.closest('[role=tab]'))setTimeout(save,0)});
+addEventListener('hashchange',function(){setTimeout(function(){save();show()},0)});
+save();show()})();
